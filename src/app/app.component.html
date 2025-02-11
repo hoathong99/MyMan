@@ -1,0 +1,17 @@
+@if (IsWelcomed) {
+<app-header></app-header>
+<router-outlet></router-outlet>
+} @else {
+    @if ( !IsBouncerPersuaded ) {<img
+        src="https://i.pinimg.com/736x/85/82/95/8582951c0b056a5f382fc5ab60af7538.jpg"
+        alt="Bouncer"
+        class="Bouncer"
+        (click)="Persuade()"
+      />} @else {<img
+        src="https://pbs.twimg.com/media/E9gKTGpX0AIWlAn?format=jpg&name=medium"
+        alt="Bouncer"
+        class="Bouncer"
+        (click)="Persuade()"
+      />
+      }
+}

@@ -1,0 +1,12 @@
+.Bouncer{
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    top: 10%;
+    width: 100%;
+    height: 80%
+}
+*{
+    background: rgb(5, 5, 5);
+}

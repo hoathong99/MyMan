@@ -1,33 +1,73 @@
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0&icon_names=search"
+/>
+
 <div class="card">
-  <p-splitter
-    [style]="{ height: '100%' }"
-    [panelSizes]="[15, 60, 25]"
-    [minSizes]="[10, 0]"
-    styleClass="mb-8"
+  <div class="MenuCard">
+    <p-splitter
+    [style]="{ height: '90vh' }"
+    [panelSizes]="[20, 60, 30]"
+    [minSizes]="[15, 20]"
+    styleClass="mb-8 "
   >
     <ng-template #panel>
-      <div style="flex-grow: 1" class="col flex items-center justify-center">
+      <div style="flex-grow: 1;" class="col flex items-center justify-center">
         <app-app-header></app-app-header>
       </div>
     </ng-template>
     <ng-template #panel>
-      <div style="flex-grow: 1" class="col flex items-center justify-center">
-        <p-floatlabel variant="in">
-          <p-iconfield>
-            <p-inputicon class="pi pi-search" />
-            <input
-              pInputText
-              id="in_label"
-              [(ngModel)]="searchKeyword"
-              autocomplete="off"
-            />
-          </p-iconfield>
-          <label for="in_label">Search</label>
-        </p-floatlabel>
-      </div>
+      <p-splitter layout="vertical" [panelSizes]="[50, 50]" [minSizes]="[30, 20]" >
+        <ng-template #panel >
+          <div style="display:flex;">
+            <div style="margin-top: 15px; margin-left: 10px; position: absolute; display: inline-flex;" class="flex-wrap justify-center">
+
+              <p-floatlabel variant="on">
+                <p-iconfield>
+                    <p-inputicon class="pi pi-search" />
+                    <input pInputText id="on_label" [(ngModel)]="searchKeyword" autocomplete="off" />
+                </p-iconfield>
+                <label for="on_label">Search</label>
+            </p-floatlabel>
+            <span style="margin: 5px; position: absolute;" class="material-symbols-outlined">
+              search
+              </span>
+            <!--Libery component work but not its icon ? Use gg icon with hand fixed positon instead-->  
+          </div>
+            <div style="padding-top: 50px;" class="menuContent">
+              <div class="box">Category1</div>
+              <div class="box">Category2</div>
+              <div class="box">Category3</div>
+              <div class="box">Category4</div>
+              <div class="box">Category5</div>
+              <div class="box">Category6</div>
+              <div class="box">Category6</div>
+              <div class="box">Category6</div>
+              <div class="box">Category6</div>
+
+            </div>
+          </div>
+        </ng-template>
+        <ng-template #panel> 
+          <div class="menuContent">
+            <div class="box">food1</div>
+            <div class="box">food2</div>
+            <div class="box">food3</div>
+            <div class="box">food4</div>
+            <div class="box">food5</div>
+            <div class="box">food6</div>
+            <div class="box">food6</div>
+            <div class="box">food6</div>
+            <div class="box">food6</div>
+            <div class="box">food6</div>
+            <div class="box">food6</div>
+            <div class="box">food6</div>
+          </div>
+        </ng-template>
+      </p-splitter>
     </ng-template>
     <ng-template #panel>
-      <p-splitter layout="vertical" [panelSizes]="[40, 60]">
+      <p-splitter layout="vertical" [panelSizes]="[40, 60]" [minSizes]="[20, 20]">
         <ng-template #panel>
           <div
             style="flex-grow: 1"
@@ -47,4 +87,6 @@
       </p-splitter>
     </ng-template>
   </p-splitter>
+  </div>
+
 </div>

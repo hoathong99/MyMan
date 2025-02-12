@@ -18,4 +18,12 @@ export const routes: Routes = [
       );
     },
   },
+  {
+    path: 'pos',
+    loadComponent: () => {
+      return import('./components/CafeSys/cafe-sys/cafe-sys.component').then(
+        (m) => m.CafeSysComponent
+      );
+    },
+  },
 ];

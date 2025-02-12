@@ -1,0 +1,50 @@
+<div class="card">
+  <p-splitter
+    [style]="{ height: '100%' }"
+    [panelSizes]="[15, 60, 25]"
+    [minSizes]="[10, 0]"
+    styleClass="mb-8"
+  >
+    <ng-template #panel>
+      <div style="flex-grow: 1" class="col flex items-center justify-center">
+        <app-app-header></app-app-header>
+      </div>
+    </ng-template>
+    <ng-template #panel>
+      <div style="flex-grow: 1" class="col flex items-center justify-center">
+        <p-floatlabel variant="in">
+          <p-iconfield>
+            <p-inputicon class="pi pi-search" />
+            <input
+              pInputText
+              id="in_label"
+              [(ngModel)]="searchKeyword"
+              autocomplete="off"
+            />
+          </p-iconfield>
+          <label for="in_label">Search</label>
+        </p-floatlabel>
+      </div>
+    </ng-template>
+    <ng-template #panel>
+      <p-splitter layout="vertical" [panelSizes]="[40, 60]">
+        <ng-template #panel>
+          <div
+            style="flex-grow: 1"
+            class="col flex items-center justify-center"
+          >
+            Order
+          </div>
+        </ng-template>
+        <ng-template #panel>
+          <div
+            style="flex-grow: 1"
+            class="col flex items-center justify-center"
+          >
+            Payment
+          </div>
+        </ng-template>
+      </p-splitter>
+    </ng-template>
+  </p-splitter>
+</div>

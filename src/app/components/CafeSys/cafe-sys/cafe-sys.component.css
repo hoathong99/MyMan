@@ -1,33 +1,84 @@
-.card{
-    margin-top: 1rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    height:90%;
+.card {
+  margin-top: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  height: 90%;
 }
-.box{
-    height: 130px;
-    width: 150px;
-    background: #cfdddb;
-    font-size: 20px;
-    border-radius: 10px;
-
-}
-.menuContent{
-    margin-top: 10px;
-    margin-left: 10px;
-    gap: 20px;
-    display: flex;
-    justify-content:center;
-    flex-wrap: wrap;
-    overflow-y: auto;
+.box {
+  height: 130px;
+  width: 150px;
+  background: #cfdddb;
+  font-size: 20px;
+  border-radius: 10px;
 }
 
-.SearchBar{
-    margin-top: 10px;
-    margin-left: 10px;
+.box:hover{
+    cursor: pointer;
+}
+.menuContent {
+  margin-top: 10px;
+  margin-left: 10px;
+  gap: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  overflow-y: auto;
 }
 
-.box{
-    padding: 10px;
+.SearchBar {
+  margin-top: 10px;
+  margin-left: 10px;
 }
 
+.box {
+  padding: 10px;
+}
+
+.OrderScreen {
+  margin-left: 10px;
+  height: 90%;
+  overflow-y: auto;
+}
+.orderItem {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  border-radius: 5px;
+  background-color: #eaeef5;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  padding-left: 5px;
+  margin-bottom: 5px;
+  margin-right: 20px;
+}
+
+.orderItem:hover {
+  background-color: #e3e7ee;
+  cursor: pointer;
+}
+
+.orderItem:active {
+  background-color: #d1d7dd;
+  cursor: pointer;
+}
+
+#orderButton:hover {
+  cursor: pointer;
+}
+
+#orderButton:active {
+  background-color: #d1d7dd;
+  cursor: pointer;
+}
+
+#orderButton {
+  border: 5px;
+  border-radius: 20px;
+  background-color: #eaeef5;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

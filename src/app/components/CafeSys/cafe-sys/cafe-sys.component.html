@@ -4,7 +4,7 @@
 />
 
 <div class="card">
-  <div>
+  <div class="MenuCard">
     <p-splitter
       [style]="{ height: '90vh' }"
       [panelSizes]="[20, 60, 30]"
@@ -16,14 +16,14 @@
           <app-app-header (tabOption)="setTabOption($event)"></app-app-header>
         </div>
       </ng-template>
-      <ng-template #panel class="MiddleMenuCard">
+      <ng-template #panel>
         <p-splitter
           layout="vertical"
           [panelSizes]="[50, 50]"
           [minSizes]="[30, 20]"
         >
           <ng-template #panel>
-            <div style="display: flexbox">
+            <div style="display: flex">
               <div
                 style="
                   margin-top: 15px;
@@ -31,7 +31,7 @@
                   position: absolute;
                   display: inline-flex;
                 "
-                class="flex-wrap"
+                class="flex-wrap justify-center"
               >
                 <p-floatlabel variant="on">
                   <p-iconfield>
@@ -46,47 +46,37 @@
                   <label for="on_label">Search</label>
                 </p-floatlabel>
                 <span
-                  style="margin: 5px; position: absolute;"
+                  style="margin: 5px; position: absolute"
                   class="material-symbols-outlined"
                 >
                   search
                 </span>
               </div>
-              @switch (tabOption) {
-                @case ("1") {
-                  <div style="padding-top: 50px" class="menuContent">
-                    <div class="box">Ban1</div>
-                    <div class="box">Ban2</div>
-                    <div class="box">Ban3</div>
-                    <div class="box">Ban4</div>
-                    <div class="box">Ban5</div>
-                    <div class="box">Ban6</div>
-                    <div class="box">Ban7</div>
-                    <div class="box">Ban8</div>
-                    <div class="box">Ban9</div>
-                  </div>
-                }
-                @case ("3") {
-                  <div style="padding-top: 50px" class="menuContent">
-                    <div class="box">Category1</div>
-                    <div class="box">Category2</div>
-                    <div class="box">Category3</div>
-                    <div class="box">Category4</div>
-                    <div class="box">Category5</div>
-                    <div class="box">Category6</div>
-                    <div class="box">Category6</div>
-                    <div class="box">Category6</div>
-                    <div class="box">Category6</div>
-                  </div>
-                }
-                @default {
-                  <div style="padding-top: 50px" class="menuContent">
-                    <div class="box">def</div>
-                    <div class="box">def</div>
-                  </div>
-                }
-              }
-              
+              @switch (tabOption) { @case ("3") {
+              <div style="padding-top: 50px" class="menuContent">
+                <div class="box">Category1</div>
+                <div class="box">Category2</div>
+                <div class="box">Category3</div>
+                <div class="box">Category4</div>
+                <div class="box">Category5</div>
+                <div class="box">Category6</div>
+                <div class="box">Category6</div>
+                <div class="box">Category6</div>
+                <div class="box">Category6</div>
+              </div>
+              } @default {
+              <div style="padding-top: 50px" class="menuContent">
+                <div class="box">df</div>
+                <div class="box">df</div>
+                <div class="box">df</div>
+                <div class="box">df</div>
+                <div class="box">df</div>
+                <div class="box">df</div>
+                <div class="box">df</div>
+                <div class="box">df</div>
+                <div class="box">df</div>
+              </div>
+              } }
             </div>
           </ng-template>
           <ng-template #panel>
@@ -114,19 +104,116 @@
           [minSizes]="[20, 20]"
         >
           <ng-template #panel>
-            <div
-              style="flex-grow: 1"
-              class="col flex items-center justify-center"
-            >
-              Order
+            <div style="flex-grow: 1">
+              <div
+                style="padding-left: 10px; display: flex; align-items: center"
+              >
+                <div
+                  style="
+                    padding: 5px;
+                    padding-top: 20px;
+                    height: 50px;
+                    width: 90%;
+                  "
+                >
+                  Table name
+                </div>
+
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="24px"
+                  viewBox="0 -960 960 960"
+                  width="24px"
+                  fill="#B7B7B7"
+                >
+                  <path
+                    d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z"
+                  />
+                </svg>
+              </div>
+              <div class="OrderScreen">
+                <div class="orderItem">
+                  <div style="width: 10%; padding-top: 5px">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="24px"
+                      viewBox="0 -960 960 960"
+                      width="24px"
+                      fill="#D16D6A"
+                    >
+                      <path
+                        d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"
+                      />
+                    </svg>
+                  </div>
+                  <div style="width: 50%">name</div>
+                  <div style="width: 20%">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="24px"
+                      viewBox="0 -960 960 960"
+                      width="24px"
+                      fill="#B7B7B7"
+                    >
+                      <path
+                        d="m336-280-56-56 144-144-144-143 56-56 144 144 143-144 56 56-144 143 144 144-56 56-143-144-144 144Z"
+                      />
+                    </svg>
+                    20
+                  </div>
+                  <div style="width: 20%">price</div>
+                </div>
+              </div>
             </div>
           </ng-template>
           <ng-template #panel>
             <div
-              style="flex-grow: 1"
+              style="flex-grow: 1; height: 100%; overflow-y: auto;"
               class="col flex items-center justify-center"
             >
-              Payment
+              <div style="margin: 10px">
+                <div>Subtotal</div>
+                <div>VAT</div>
+              </div>
+
+              <p-divider type="dashed" />
+              <div style="margin: 10px">
+                <div>Total</div>
+                <div>
+                  <div>Payment method</div>
+                  <div style="display: flex; padding: 20px">
+                    <div style="height: 80px; width: 80px">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="48px"
+                        viewBox="0 -960 960 960"
+                        width="48px"
+                        fill="#B7B7B7"
+                      >
+                        <path
+                          d="M80-707v-173h173v60H140v113H80Zm0 627v-173h60v113h113v60H80Zm627 0v-60h113v-113h60v173H707Zm113-627v-113H707v-60h173v173h-60ZM708-251h63v63h-63v-63Zm0-126h63v63h-63v-63Zm-63 63h63v63h-63v-63Zm-63 63h63v63h-63v-63Zm-63-63h63v63h-63v-63Zm126-126h63v63h-63v-63Zm-63 63h63v63h-63v-63Zm-63-63h63v63h-63v-63Zm252-332v252H519v-252h252ZM440-440v252H188v-252h252Zm0-332v252H188v-252h252Zm-50 534v-152H238v152h152Zm0-332v-152H238v152h152Zm331 0v-152H569v152h152Z"
+                        />
+                      </svg>
+                    </div>
+                    <div style="height: 80px; width: 80px">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="48px"
+                        viewBox="0 -960 960 960"
+                        width="48px"
+                        fill="#B7B7B7"
+                      >
+                        <path
+                          d="M540-420q-50 0-85-35t-35-85q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35ZM220-280q-24.75 0-42.37-17.63Q160-315.25 160-340v-400q0-24.75 17.63-42.38Q195.25-800 220-800h640q24.75 0 42.38 17.62Q920-764.75 920-740v400q0 24.75-17.62 42.37Q884.75-280 860-280H220Zm100-60h440q0-42 29-71t71-29v-200q-42 0-71-29t-29-71H320q0 42-29 71t-71 29v200q42 0 71 29t29 71Zm480 180H100q-24.75 0-42.37-17.63Q40-195.25 40-220v-460h60v460h700v60ZM220-340v-400 400Z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div id="orderButton">
+                    Place Order
+                  </div>
+                </div>
+              </div>
             </div>
           </ng-template>
         </p-splitter>

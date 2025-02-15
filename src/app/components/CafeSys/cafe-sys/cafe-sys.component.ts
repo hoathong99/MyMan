@@ -7,6 +7,7 @@ import { IconFieldModule } from 'primeng/iconfield';
 import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
 import { FloatLabelModule } from 'primeng/floatlabel';
+import { DividerModule } from 'primeng/divider';
 @Component({
   selector: 'app-cafe-sys',
   imports: [
@@ -18,6 +19,7 @@ import { FloatLabelModule } from 'primeng/floatlabel';
     InputTextModule,
     FloatLabelModule,
     FormsModule,
+    DividerModule,
   ],
   templateUrl: './cafe-sys.component.html',
   styleUrl: './cafe-sys.component.css',
@@ -29,4 +31,5 @@ export class CafeSysComponent {
     this.tabOption = num.toString();
     console.log("Change tab to"+this.tabOption);
   }
+
 }

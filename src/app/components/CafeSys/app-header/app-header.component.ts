@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-app-header',
@@ -9,5 +9,10 @@ import { Component } from '@angular/core';
 })
 export class AppHeaderComponent {
   searchKeyword : string ="";
+  @Output() tabOption = new EventEmitter<number>();
 
+  clickOnTab(option:number){
+    this.tabOption.emit(option);
+    console.log("clickon tab"+option);
+  }
 }

@@ -24,4 +24,9 @@ import { FloatLabelModule } from 'primeng/floatlabel';
 })
 export class CafeSysComponent {
   searchKeyword : string = "";
+  tabOption: string="";
+  setTabOption(num :number){
+    this.tabOption = num.toString();
+    console.log("Change tab to"+this.tabOption);
+  }
 }

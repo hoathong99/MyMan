@@ -4,89 +4,133 @@
 />
 
 <div class="card">
-  <div class="MenuCard">
+  <div>
     <p-splitter
-    [style]="{ height: '90vh' }"
-    [panelSizes]="[20, 60, 30]"
-    [minSizes]="[15, 20]"
-    styleClass="mb-8 "
-  >
-    <ng-template #panel>
-      <div style="flex-grow: 1;" class="col flex items-center justify-center">
-        <app-app-header></app-app-header>
-      </div>
-    </ng-template>
-    <ng-template #panel>
-      <p-splitter layout="vertical" [panelSizes]="[50, 50]" [minSizes]="[30, 20]" >
-        <ng-template #panel >
-          <div style="display:flex;">
-            <div style="margin-top: 15px; margin-left: 10px; position: absolute; display: inline-flex;" class="flex-wrap justify-center">
-
-              <p-floatlabel variant="on">
-                <p-iconfield>
+      [style]="{ height: '90vh' }"
+      [panelSizes]="[20, 60, 30]"
+      [minSizes]="[15, 20]"
+      styleClass="mb-8 "
+    >
+      <ng-template #panel>
+        <div style="flex-grow: 1" class="col flex items-center justify-center">
+          <app-app-header (tabOption)="setTabOption($event)"></app-app-header>
+        </div>
+      </ng-template>
+      <ng-template #panel class="MiddleMenuCard">
+        <p-splitter
+          layout="vertical"
+          [panelSizes]="[50, 50]"
+          [minSizes]="[30, 20]"
+        >
+          <ng-template #panel>
+            <div style="display: flexbox">
+              <div
+                style="
+                  margin-top: 15px;
+                  margin-left: 10px;
+                  position: absolute;
+                  display: inline-flex;
+                "
+                class="flex-wrap"
+              >
+                <p-floatlabel variant="on">
+                  <p-iconfield>
                     <p-inputicon class="pi pi-search" />
-                    <input pInputText id="on_label" [(ngModel)]="searchKeyword" autocomplete="off" />
-                </p-iconfield>
-                <label for="on_label">Search</label>
-            </p-floatlabel>
-            <span style="margin: 5px; position: absolute;" class="material-symbols-outlined">
-              search
-              </span>
-            <!--Libery component work but not its icon ? Use gg icon with hand fixed positon instead-->  
-          </div>
-            <div style="padding-top: 50px;" class="menuContent">
-              <div class="box">Category1</div>
-              <div class="box">Category2</div>
-              <div class="box">Category3</div>
-              <div class="box">Category4</div>
-              <div class="box">Category5</div>
-              <div class="box">Category6</div>
-              <div class="box">Category6</div>
-              <div class="box">Category6</div>
-              <div class="box">Category6</div>
-
+                    <input
+                      pInputText
+                      id="on_label"
+                      [(ngModel)]="searchKeyword"
+                      autocomplete="off"
+                    />
+                  </p-iconfield>
+                  <label for="on_label">Search</label>
+                </p-floatlabel>
+                <span
+                  style="margin: 5px; position: absolute;"
+                  class="material-symbols-outlined"
+                >
+                  search
+                </span>
+              </div>
+              @switch (tabOption) {
+                @case ("1") {
+                  <div style="padding-top: 50px" class="menuContent">
+                    <div class="box">Ban1</div>
+                    <div class="box">Ban2</div>
+                    <div class="box">Ban3</div>
+                    <div class="box">Ban4</div>
+                    <div class="box">Ban5</div>
+                    <div class="box">Ban6</div>
+                    <div class="box">Ban7</div>
+                    <div class="box">Ban8</div>
+                    <div class="box">Ban9</div>
+                  </div>
+                }
+                @case ("3") {
+                  <div style="padding-top: 50px" class="menuContent">
+                    <div class="box">Category1</div>
+                    <div class="box">Category2</div>
+                    <div class="box">Category3</div>
+                    <div class="box">Category4</div>
+                    <div class="box">Category5</div>
+                    <div class="box">Category6</div>
+                    <div class="box">Category6</div>
+                    <div class="box">Category6</div>
+                    <div class="box">Category6</div>
+                  </div>
+                }
+                @default {
+                  <div style="padding-top: 50px" class="menuContent">
+                    <div class="box">def</div>
+                    <div class="box">def</div>
+                  </div>
+                }
+              }
+              
             </div>
-          </div>
-        </ng-template>
-        <ng-template #panel> 
-          <div class="menuContent">
-            <div class="box">food1</div>
-            <div class="box">food2</div>
-            <div class="box">food3</div>
-            <div class="box">food4</div>
-            <div class="box">food5</div>
-            <div class="box">food6</div>
-            <div class="box">food6</div>
-            <div class="box">food6</div>
-            <div class="box">food6</div>
-            <div class="box">food6</div>
-            <div class="box">food6</div>
-            <div class="box">food6</div>
-          </div>
-        </ng-template>
-      </p-splitter>
-    </ng-template>
-    <ng-template #panel>
-      <p-splitter layout="vertical" [panelSizes]="[40, 60]" [minSizes]="[20, 20]">
-        <ng-template #panel>
-          <div
-            style="flex-grow: 1"
-            class="col flex items-center justify-center"
-          >
-            Order
-          </div>
-        </ng-template>
-        <ng-template #panel>
-          <div
-            style="flex-grow: 1"
-            class="col flex items-center justify-center"
-          >
-            Payment
-          </div>
-        </ng-template>
-      </p-splitter>
-    </ng-template>
-  </p-splitter>
+          </ng-template>
+          <ng-template #panel>
+            <div class="menuContent">
+              <div class="box">food1</div>
+              <div class="box">food2</div>
+              <div class="box">food3</div>
+              <div class="box">food4</div>
+              <div class="box">food5</div>
+              <div class="box">food6</div>
+              <div class="box">food6</div>
+              <div class="box">food6</div>
+              <div class="box">food6</div>
+              <div class="box">food6</div>
+              <div class="box">food6</div>
+              <div class="box">food6</div>
+            </div>
+          </ng-template>
+        </p-splitter>
+      </ng-template>
+      <ng-template #panel>
+        <p-splitter
+          layout="vertical"
+          [panelSizes]="[40, 60]"
+          [minSizes]="[20, 20]"
+        >
+          <ng-template #panel>
+            <div
+              style="flex-grow: 1"
+              class="col flex items-center justify-center"
+            >
+              Order
+            </div>
+          </ng-template>
+          <ng-template #panel>
+            <div
+              style="flex-grow: 1"
+              class="col flex items-center justify-center"
+            >
+              Payment
+            </div>
+          </ng-template>
+        </p-splitter>
+      </ng-template>
+    </p-splitter>
   </div>
-
 </div>

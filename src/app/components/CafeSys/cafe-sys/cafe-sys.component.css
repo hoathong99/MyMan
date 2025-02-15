@@ -19,8 +19,10 @@
   margin-top: 10px;
   margin-left: 10px;
   gap: 20px;
+  row-gap: 20px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  align-content: flex-start;
   flex-wrap: wrap;
   overflow-y: auto;
 }
@@ -69,16 +71,24 @@
 }
 
 #orderButton:active {
-  background-color: #d1d7dd;
+  background-color: #b5bcc4;
   cursor: pointer;
 }
 
 #orderButton {
   border: 5px;
   border-radius: 20px;
-  background-color: #eaeef5;
+  background-color: #a6adb9;
   height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.payMethod:hover{
+  cursor: pointer;
+}
+
+::ng-deep .p-divider.p-divider-dashed {
+  border-top: 1px dashed black !important;
 }

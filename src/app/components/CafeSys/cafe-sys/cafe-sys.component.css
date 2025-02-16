@@ -17,14 +17,14 @@
 }
 .menuContent {
   margin-top: 10px;
-  margin-left: 10px;
+  margin-left: 20px;
   gap: 20px;
   row-gap: 20px;
   display: flex;
   justify-content: flex-start;
   align-content: flex-start;
   flex-wrap: wrap;
-  overflow-y: auto;
+  overflow-y: auto !important; 
 }
 
 .SearchBar {

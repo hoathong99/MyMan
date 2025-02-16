@@ -24,12 +24,41 @@
         >
           <ng-template #panel>
             <div style="display: flex">
+              @switch (tabOption) { @case ("2") {
+              <div style="flex-grow: 1; overflow-y: auto">
+                <p-tabs value="0">
+                  <p-tablist>
+                    @for (tab of tabs; track tab.value) {
+                    <p-tab [value]="tab.value">{{ tab.title }}</p-tab>
+                    }
+                  </p-tablist>
+                  <p-tabpanels>
+                    @for (tab of tabs; track tab.value) {
+                    <p-tabpanel [value]="tab.value">
+                      <div style="margin-left: 5px !important;" class="menuContent">
+                        <div class="box">ban1</div>
+                        <div class="box">ban2</div>
+                        <div class="box">ban3</div>
+                        <div class="box">ban4</div>
+                        <div class="box">ban5</div>
+                        <div class="box">ban6</div>
+                        <div class="box">ban7</div>
+                        <div class="box">ban8</div>
+                        <div class="box">ban9</div>
+                      </div>
+                    </p-tabpanel>
+                    }
+                  </p-tabpanels>
+                </p-tabs>
+              </div>
+
+              } @case ("3") {
               <div
                 style="
                   margin-top: 15px;
                   margin-left: 10px;
                   position: absolute;
-                  display: inline-flex;
+                  display: flex;
                 "
                 class="flex-wrap justify-center"
               >
@@ -52,7 +81,6 @@
                   search
                 </span>
               </div>
-              @switch (tabOption) { @case ("3") {
               <div style="padding-top: 50px" class="menuContent">
                 <div class="box">Category1</div>
                 <div class="box">Category2</div>
@@ -168,30 +196,48 @@
           </ng-template>
           <ng-template #panel>
             <div
-              style="flex-grow: 1; height: 95%; overflow-y: auto; background-color: #eaeef5; border-radius: 5px; padding-left: 5px; margin: 10px; margin-right: 20px;"
+              style="
+                flex-grow: 1;
+                height: 95%;
+                overflow-y: auto;
+                background-color: #eaeef5;
+                border-radius: 5px;
+                padding-left: 5px;
+                margin: 10px;
+                margin-right: 20px;
+              "
               class="col flex items-center justify-center"
             >
               <div style="margin: 10px">
-                <div class="totalCount" style="display: flex; align-items: center;">
-                  <div style="width: 80%; flex-shrink: 1;">Subtotal</div>
-                  <div style="width: 20%; flex-shrink: 2;" >49000</div>
+                <div
+                  class="totalCount"
+                  style="display: flex; align-items: center"
+                >
+                  <div style="width: 80%; flex-shrink: 1">Subtotal</div>
+                  <div style="width: 20%; flex-shrink: 2">49000</div>
                 </div>
-                <div class="totalCount" style="display: flex; align-items: center;">
-                  <div style="width: 80%; flex-shrink: 1;">VAT(%)</div>
-                  <div style="width: 20%; flex-shrink: 2;" >10</div>
+                <div
+                  class="totalCount"
+                  style="display: flex; align-items: center"
+                >
+                  <div style="width: 80%; flex-shrink: 1">VAT(%)</div>
+                  <div style="width: 20%; flex-shrink: 2">10</div>
                 </div>
               </div>
 
               <p-divider type="dashed" />
               <div style="margin: 10px">
-                <div class="totalCount" style="display: flex; align-items: center;">
-                  <div style="width: 80%; flex-shrink: 1;">Total</div>
-                  <div style="width: 20%; flex-shrink: 2;" >49000</div>
+                <div
+                  class="totalCount"
+                  style="display: flex; align-items: center"
+                >
+                  <div style="width: 80%; flex-shrink: 1">Total</div>
+                  <div style="width: 20%; flex-shrink: 2">49000</div>
                 </div>
                 <div>
                   <div style="margin-top: 20px">Payment method</div>
                   <div style="display: flex; padding: 20px">
-                    <div class="payMethod" style="height: 80px; width: 80px;">
+                    <div class="payMethod" style="height: 80px; width: 80px">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         height="48px"
@@ -218,9 +264,7 @@
                       </svg>
                     </div>
                   </div>
-                  <div id="orderButton">
-                    Place Order
-                  </div>
+                  <div id="orderButton">Place Order</div>
                 </div>
               </div>
             </div>

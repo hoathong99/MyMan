@@ -23,40 +23,15 @@
           [minSizes]="[30, 20]"
         >
           <ng-template #panel>
-            <div style="display: flex">
+            <div style="display: flex; width: 100%;">
               @switch (tabOption) { @case ("2") {
-              <div style="flex-grow: 1; overflow-y: auto">
-                <p-tabs value="0">
-                  <p-tablist>
-                    @for (tab of tabs; track tab.value) {
-                    <p-tab [value]="tab.value">{{ tab.title }}</p-tab>
-                    }
-                  </p-tablist>
-                  <p-tabpanels>
-                    @for (tab of tabs; track tab.value) {
-                    <p-tabpanel [value]="tab.value">
-                      <div style="margin-left: 5px !important;" class="menuContent">
-                        <div class="box">ban1</div>
-                        <div class="box">ban2</div>
-                        <div class="box">ban3</div>
-                        <div class="box">ban4</div>
-                        <div class="box">ban5</div>
-                        <div class="box">ban6</div>
-                        <div class="box">ban7</div>
-                        <div class="box">ban8</div>
-                        <div class="box">ban9</div>
-                      </div>
-                    </p-tabpanel>
-                    }
-                  </p-tabpanels>
-                </p-tabs>
-              </div>
+                <app-table-screen style="overflow-y: auto; width: 100%;"></app-table-screen>
 
               } @case ("3") {
               <div
                 style="
                   margin-top: 15px;
-                  margin-left: 10px;
+                  margin-left: 20px;
                   position: absolute;
                   display: flex;
                 "

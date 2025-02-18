@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { DividerModule } from 'primeng/divider';
 import { TabsModule } from 'primeng/tabs';
+import { TableScreenComponent } from '../table-screen/table-screen.component';
 @Component({
   selector: 'app-cafe-sys',
   imports: [
@@ -22,6 +23,7 @@ import { TabsModule } from 'primeng/tabs';
     FormsModule,
     DividerModule,
     TabsModule,
+    TableScreenComponent,
   ],
   templateUrl: './cafe-sys.component.html',
   styleUrl: './cafe-sys.component.css',
@@ -29,14 +31,8 @@ import { TabsModule } from 'primeng/tabs';
 export class CafeSysComponent {
   searchKeyword: string = '';
   tabOption: string = '';
-  tabs: { title: string; value: number; content: string }[] = [];
   
   ngOnInit() {
-    this.tabs = [
-        { title: 'Tab 1', value: 0, content: 'Tab 1 Content' },
-        { title: 'Tab 2', value: 1, content: 'Tab 2 Content' },
-        { title: 'Tab 3', value: 2, content: 'Tab 3 Content' },
-    ];
 }
   setTabOption(num: number) {
     this.tabOption = num.toString();

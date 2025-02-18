@@ -10,6 +10,7 @@
   background: #cfdddb;
   font-size: 20px;
   border-radius: 10px;
+  padding: 10px;
 }
 
 .box:hover{
@@ -32,9 +33,6 @@
   margin-left: 10px;
 }
 
-.box {
-  padding: 10px;
-}
 
 .OrderScreen {
   margin-left: 10px;

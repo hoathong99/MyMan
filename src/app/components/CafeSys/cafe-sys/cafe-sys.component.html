@@ -30,55 +30,11 @@
                 (outputTable)="setTable($event)"
                 (outputDbcFlag)="setTableAndOpenMenu($event)"
               ></app-table-screen>
-
               } @case ("3") {
-
               <app-category-screen
+                (selectedCategory)="setCategory($event)"
                 style="display: flex; width: 100%; height: 100%"
               ></app-category-screen>
-
-              <!--
-                              <div
-                style="
-                  margin-top: 15px;
-                  margin-left: 20px;
-                  position: absolute;
-                  display: flex;
-                "
-                class="flex-wrap justify-center"
-              >
-                <p-floatlabel variant="on">
-                  <p-iconfield>
-                    <p-inputicon class="pi pi-search" />
-                    <input
-                      pInputText
-                      id="on_label"
-                      [(ngModel)]="searchKeyword"
-                      autocomplete="off"
-                    />
-                  </p-iconfield>
-                  <label for="on_label">Search</label>
-                </p-floatlabel>
-                <span
-                  style="margin: 5px; position: absolute"
-                  class="material-symbols-outlined"
-                >
-                  search
-                </span>
-              </div>
-              <div style="padding-top: 50px" class="menuContent">
-                <div class="box">Category1</div>
-                <div class="box">Category2</div>
-                <div class="box">Category3</div>
-                <div class="box">Category4</div>
-                <div class="box">Category5</div>
-                <div class="box">Category6</div>
-                <div class="box">Category6</div>
-                <div class="box">Category6</div>
-                <div class="box">Category6</div>
-              </div>
-                -->
-
               } @default {
               <div style="padding-top: 50px" class="menuContent">
                 <div class="box">df</div>
@@ -96,18 +52,25 @@
           </ng-template>
           <ng-template #panel>
             <div class="menuContent">
-              <div class="box">food1</div>
-              <div class="box">food2</div>
-              <div class="box">food3</div>
-              <div class="box">food4</div>
-              <div class="box">food5</div>
-              <div class="box">food6</div>
-              <div class="box">food6</div>
-              <div class="box">food6</div>
-              <div class="box">food6</div>
-              <div class="box">food6</div>
-              <div class="box">food6</div>
-              <div class="box">food6</div>
+              @for (item of displayItemServing; track $index) {
+              <div class="box">
+                <div (dblclick)="sendItemToBill(item)">
+                  <div style="width: 100%; height: 50px; font-size: medium; font-weight: bold;">{{ item.name }}</div>
+                  <div style="width: 100%; height: 10px;">{{ item.price }}</div>
+                </div>
+                <div class="custom-input-number">
+                  <button style="width: 50px" (click)="decrease($index)">-</button>
+                  <input
+                    step="1"
+                    style="width: 50px; font-size: larger; text-align: center;"
+                    type="number"
+                    [(ngModel)]="item.count"
+                    (input)="onInputChange($index,$event)"
+                  />
+                  <button style="width: 50px" (click)="increase($index)">+</button>
+                </div>
+              </div>
+              }
             </div>
           </ng-template>
         </p-splitter>

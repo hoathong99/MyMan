@@ -25,7 +25,7 @@
         />
       </svg>
     </div>
-    @for (item of itemList; track $index) {
+    @for (item of currentTable.bill.listArray; track $index) {
         <div class="OrderScreen">
             <div class="orderItem">
               <div style="width: 10%; padding-top: 5px">
@@ -56,44 +56,8 @@
                 </svg>
                 {{item.count}}
               </div>
-              <div style="width: 20%">{{item.price}}</div>
+              <div style="width: 20%">{{item.price*item.count}}</div>
             </div>
           </div>
     }
-    <!--
-        <div class="OrderScreen">
-      <div class="orderItem">
-        <div style="width: 10%; padding-top: 5px">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            height="24px"
-            viewBox="0 -960 960 960"
-            width="24px"
-            fill="#D16D6A"
-          >
-            <path
-              d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"
-            />
-          </svg>
-        </div>
-        <div style="width: 50%">name</div>
-        <div style="width: 20%">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            height="24px"
-            viewBox="0 -960 960 960"
-            width="24px"
-            fill="#B7B7B7"
-          >
-            <path
-              d="m336-280-56-56 144-144-144-143 56-56 144 144 143-144 56 56-144 143 144 144-56 56-143-144-144 144Z"
-            />
-          </svg>
-          20
-        </div>
-        <div style="width: 20%">49000</div>
-      </div>
-    </div>
-    -->
-
   </div>

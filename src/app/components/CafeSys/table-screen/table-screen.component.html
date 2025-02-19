@@ -10,7 +10,7 @@
         <p-tabpanel [value]="tab.value">
           <div style="margin-left: 5px !important;" class="menuContent">
             @for (item of tab.content; track $index) {
-              <div class="box">{{item.name}}</div>
+              <div class="box" (click)="ClickOnTable(item)" (dblclick)="doubleClickOnTable()">{{item.name}}</div>
             }
           </div>
         </p-tabpanel>

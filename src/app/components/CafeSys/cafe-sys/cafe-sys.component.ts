@@ -8,8 +8,11 @@ import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { DividerModule } from 'primeng/divider';
-import { TabsModule } from 'primeng/tabs';
+import { Tab, TabsModule } from 'primeng/tabs';
 import { TableScreenComponent } from '../table-screen/table-screen.component';
+import { BillScreenComponent } from '../bill-screen/bill-screen.component';
+import { Table } from '../Dto/Dtos';
+import { CategoryScreenComponent } from '../category-screen/category-screen.component';
 @Component({
   selector: 'app-cafe-sys',
   imports: [
@@ -24,6 +27,8 @@ import { TableScreenComponent } from '../table-screen/table-screen.component';
     DividerModule,
     TabsModule,
     TableScreenComponent,
+    BillScreenComponent,
+    CategoryScreenComponent
   ],
   templateUrl: './cafe-sys.component.html',
   styleUrl: './cafe-sys.component.css',
@@ -31,58 +36,23 @@ import { TableScreenComponent } from '../table-screen/table-screen.component';
 export class CafeSysComponent {
   searchKeyword: string = '';
   tabOption: string = '';
-  
-  ngOnInit() {
-}
+  tableInput: Table = new Table();
+  ngOnInit() {}
   setTabOption(num: number) {
     this.tabOption = num.toString();
     console.log('Change tab to' + this.tabOption);
   }
-}
-
-export class MenuItem {
-  name: string = '';
-  price: number = 0;
-  icon: string = '';
-  count: number = 0;
-  color: string = '';
-  constructor(
-    name?: string,
-    price?: number,
-    icon?: string,
-    count?: number,
-    color?: string
-  ) {}
-  addCount(n: number) {
-    this.count += n;
+  setTable(table: Table) {
+    this.tableInput = table;
+    console.log('Change tab to' + this.tableInput);
   }
-}
 
-export class Table {
-  id: string = '';
-  name: string = '';
-  area: string = '';
-  icon: string = '';
-  bill: Bill = new Bill();
-  color: string = '';
-  constructor() {}
-}
-
-export class Bill {
-  id: string = '';
-  listArray: ItemServing[] = [];
-  subTotal: number = 0;
-  total: number = 0;
-  VAT: number = 0;
-  status: number = 0;
-  method: number = 0;
-  constructor(id?: string, list?: ItemServing[]) {}
-}
-
-export class ItemServing {
-  name: string = '';
-  price: number = 0;
-  id: string = '';
-  image: string = '';
-  constructor(id?: string, name?: string, price?: number, image?: string) {}
+  setTableAndOpenMenu(bool: boolean) {
+    // this.tableInput = table;
+    if (bool == true) {
+      this.tabOption = '3';
+      console.log('taboption ' + this.tabOption);
+    }
+    // console.log('Change tab to' + this.tableInput + " And open menu");
+  }
 }

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { TabsModule } from 'primeng/tabs';
 import { CommonModule } from '@angular/common';
 import { Output, EventEmitter } from '@angular/core';
-
+import { Area, Table, Bill, ItemServing } from '../Dto/Dtos';
 @Component({
   selector: 'app-table-screen',
   imports: [TabsModule, CommonModule],
@@ -11,10 +11,12 @@ import { Output, EventEmitter } from '@angular/core';
 })
 export class TableScreenComponent {
   tabs: { title: string; value: number; content: string }[] = [];
-  @Output() chosenTable = new EventEmitter<Table>();
+  @Output() outputTable = new EventEmitter<Table>();
+  @Output() outputDbcFlag = new EventEmitter<boolean>();
   tableList: Table[] = [];
   displayAreaTab: { title: string; value: number; content: Table[]}[] = [];
 
+  //dummy data//-------------------------------------------------------------------------------------------------
   area: Area[] = [
     {
       id: 'A001',
@@ -128,32 +130,25 @@ export class TableScreenComponent {
       isAvaiable: true,
     },
   ];
-
+  //----------------------------------------------------------------------------------------------------------//
 
   ngOnInit() {
-
-
-    //var areas: string[] = this.tables.map(table => table.area);             //Map to get list of areas
-    //const uniqueAreas: string[] = Array.from(new Set(areas)); // Remove duplicates
-
-    this.tabs = [
-      { title: 'Tab 1', value: 0, content: 'Tab 1 Content' },
-      { title: 'Tab 2', value: 1, content: 'Tab 2 Content' },
-      { title: 'Tab 3', value: 2, content: 'Tab 3 Content' },
-    ];
-
     this.displayAreaTab = this.area.map((area, index) => ({
       title: area.name,                                              // Use area name as title
       value: index,                                                 // Incrementing value from 0 onwards
       content: this.tables.filter(table => table.area === area.id) // Get tables belonging to this area
     }));
-    
-    console.log(this.displayAreaTab);
 
   }
 
-  chooseTable(id: string) {
-    this.chooseTable;
+  ClickOnTable(table: Table): void {
+    console.log('Selected Bill:', table);
+    this.outputTable.emit(table);
+  }
+
+  doubleClickOnTable(){
+    this.outputDbcFlag.emit(true);
+    console.log('Dbc Selected Bill:');
   }
 
   EnableNewBill() {
@@ -161,38 +156,4 @@ export class TableScreenComponent {
   }
 }
 
-export class Table {
-  id: string = '';
-  name: string = '';
-  area: string = '';
-  icon: string = '';
-  bill: Bill = new Bill();
-  color: string = '';
-  isAvaiable: boolean = true;
-  constructor() { }
-}
 
-export class Bill {
-  id: string = '';
-  listArray: ItemServing[] = [];
-  subTotal: number = 0;
-  total: number = 0;
-  VAT: number = 0;
-  status: number = 0;
-  method: number = 0;
-  constructor(id?: string, list?: ItemServing[]) { }
-}
-
-export class Area {
-  id: string = '';
-  name: string = '';
-}
-
-export class ItemServing {
-  name: string = '';
-  price: number = 0;
-  id: string = '';
-  image: string = '';
-  descrip: string = '';
-  constructor(id?: string, name?: string, price?: number, image?: string) { }
-}

@@ -1,0 +1,39 @@
+<div
+style="
+  margin-top: 15px;
+  margin-left: 20px;
+  position: absolute;
+  display: flex;
+"
+class="flex-wrap justify-center"
+>
+<p-floatlabel variant="on">
+  <p-iconfield>
+    <p-inputicon class="pi pi-search" />
+    <input
+      pInputText
+      id="on_label"
+      [(ngModel)]="searchKeyword"
+      autocomplete="off"
+    />
+  </p-iconfield>
+  <label for="on_label">Search</label>
+</p-floatlabel>
+<span
+  style="margin: 5px; position: absolute"
+  class="material-symbols-outlined"
+>
+  search
+</span>
+</div>
+<div style="padding-top: 50px" class="menuContent">
+<div class="box">Category1</div>
+<div class="box">Category2</div>
+<div class="box">Category3</div>
+<div class="box">Category4</div>
+<div class="box">Category5</div>
+<div class="box">Category6</div>
+<div class="box">Category6</div>
+<div class="box">Category6</div>
+<div class="box">Category6</div>
+</div>

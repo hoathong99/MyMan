@@ -215,7 +215,7 @@ export class CafeSysComponent {
   }
 
   sendItemToBill(item: ItemServing) {
-    if (item.count > 0) {
+    if (item.count > 0 && this.tableInput.bill.id!='') {
       this.tableInput.bill.listArray.push(new ItemServing(item.id, item.name, item.price, item.image, item.descrip, item.count, item.category_id, item.category_name ));
       console.log(this.tableInput);
     }
